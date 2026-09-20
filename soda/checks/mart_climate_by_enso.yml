@@ -1,0 +1,25 @@
+checks for mart_climate_by_enso:
+
+  # Sin filas vacías
+  - row_count > 0
+
+  # Temperaturas dentro de rango posible para Sudamérica
+  - min(temp_c) >= -20
+  - max(temp_c) <= 45
+
+  # Precipitación no negativa
+  - min(precip_mm) >= 0
+
+  # Sin nulos en columnas críticas
+  - missing_count(city) = 0
+  - missing_count(year) = 0
+  - missing_count(month) = 0
+  - missing_count(enso_phase) = 0
+
+  # Fases ENSO válidas solamente
+  - invalid_count(enso_phase) = 0:
+      valid values: [el_nino, la_nina, neutral]
+
+  # Rango de años correcto
+  - min(year) >= 1981
+  - max(year) <= 2024

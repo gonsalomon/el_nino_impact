@@ -1,0 +1,1133 @@
+[0m18:40:18.501083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE849D2F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE8259CE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE873839D0>]}
+
+
+============================== 18:40:18.514938 | d707f5bd-3b6e-483f-9448-0f1e8a7d0716 ==============================
+[0m18:40:18.514938 [info ] [MainThread]: Running with dbt=1.12.5
+[0m18:40:18.516007 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt\\logs'}
+[0m18:40:18.555101 [info ] [MainThread]: dbt version: 1.12.5
+[0m18:40:18.555673 [info ] [MainThread]: python version: 3.14.7
+[0m18:40:18.556122 [info ] [MainThread]: python path: C:\Python314\python.exe
+[0m18:40:18.556559 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m18:40:18.651710 [info ] [MainThread]: Using profiles dir at C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt
+[0m18:40:18.652328 [info ] [MainThread]: Using profiles.yml file at C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\profiles.yml
+[0m18:40:18.652804 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\dbt_project.yml
+[0m18:40:18.654103 [info ] [MainThread]: adapter type: postgres
+[0m18:40:18.654613 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:40:18.817210 [info ] [MainThread]: Configuration:
+[0m18:40:18.817803 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:40:18.818253 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:40:18.818663 [info ] [MainThread]: Required dependencies:
+[0m18:40:18.819086 [debug] [MainThread]: Executing "git --help"
+[0m18:40:18.928436 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:40:18.929211 [debug] [MainThread]: STDERR: "b''"
+[0m18:40:18.929738 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:40:18.930227 [info ] [MainThread]: Connection:
+[0m18:40:18.930690 [info ] [MainThread]:   host: aws-0-us-east-1.pooler.supabase.com
+[0m18:40:18.931097 [info ] [MainThread]:   port: 6543
+[0m18:40:18.931506 [info ] [MainThread]:   user: postgres.msytfcgzvpzksjiwbjsd
+[0m18:40:18.931904 [info ] [MainThread]:   database: postgres
+[0m18:40:18.932324 [info ] [MainThread]:   schema: public
+[0m18:40:18.932841 [info ] [MainThread]:   connect_timeout: 10
+[0m18:40:18.933381 [info ] [MainThread]:   role: None
+[0m18:40:18.933814 [info ] [MainThread]:   search_path: None
+[0m18:40:18.934206 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:40:18.934584 [info ] [MainThread]:   sslmode: require
+[0m18:40:18.934959 [info ] [MainThread]:   sslcert: None
+[0m18:40:18.935340 [info ] [MainThread]:   sslkey: None
+[0m18:40:18.936215 [info ] [MainThread]:   sslrootcert: None
+[0m18:40:18.936908 [info ] [MainThread]:   application_name: dbt
+[0m18:40:18.937445 [info ] [MainThread]:   autocommit: False
+[0m18:40:18.937952 [info ] [MainThread]:   retries: 1
+[0m18:40:18.938924 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:40:19.314206 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:40:22.131117 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:40:22.131728 [debug] [MainThread]: On debug: select 1 as id
+[0m18:40:22.132206 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:40:23.566866 [debug] [MainThread]: SQL status: SELECT 1 in 1.434 seconds
+[0m18:40:23.568693 [debug] [MainThread]: On debug: Close
+[0m18:40:23.569516 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:40:23.570254 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:40:23.571806 [debug] [MainThread]: Command `dbt debug` succeeded at 18:40:23.571588 after 5.36 seconds
+[0m18:40:23.572294 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:40:23.572757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE874A0B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE8770ED50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE8714F8A0>]}
+[0m18:40:23.573317 [debug] [MainThread]: Flushing usage events
+[0m18:40:24.307184 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:40:59.592262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BB2E6F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148B8E9CE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BDC579D0>]}
+
+
+============================== 18:40:59.603840 | e12f33d7-02d8-47b1-99d6-f33b09a03efa ==============================
+[0m18:40:59.603840 [info ] [MainThread]: Running with dbt=1.12.5
+[0m18:40:59.604796 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt\\logs'}
+[0m18:40:59.898958 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BDC07CE0>]}
+[0m18:40:59.989367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BBECDF20>]}
+[0m18:40:59.991726 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:41:00.357340 [debug] [MainThread]: checksum: 0bce3ae3049c7c0d7739d914242e358e1b4795d80c6abf319a60ed4cdac07412, vars: {}, profile: el_nino, target: dev, version: 1.12.5
+[0m18:41:00.360305 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:41:00.360993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BDCABA50>]}
+[0m18:41:03.145859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BAC0CE60>]}
+[0m18:41:03.243935 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:41:03.249017 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:41:03.288266 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:41:03.325082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BE5AE890>]}
+[0m18:41:03.325735 [info ] [MainThread]: Found 3 models, 477 macros
+[0m18:41:03.326425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BE210BB0>]}
+[0m18:41:03.329547 [info ] [MainThread]: 
+[0m18:41:03.330258 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:41:03.330779 [info ] [MainThread]: 
+[0m18:41:03.331676 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:41:03.339079 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:41:03.433661 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:41:03.434132 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:41:03.434461 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:41:04.825945 [debug] [ThreadPool]: SQL status: SELECT 13 in 1.391 seconds
+[0m18:41:04.827703 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:41:04.830276 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:41:04.830969 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:41:04.831445 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:41:06.186915 [debug] [ThreadPool]: SQL status: SELECT 13 in 1.355 seconds
+[0m18:41:06.188603 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:41:06.190143 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now create_postgres_public_marts)
+[0m18:41:06.190943 [debug] [ThreadPool]: Creating schema "database: "postgres"
+schema: "public_marts"
+"
+[0m18:41:06.196117 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_marts"
+[0m18:41:06.196554 [debug] [ThreadPool]: On create_postgres_public_marts: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "create_postgres_public_marts"} */
+create schema if not exists "public_marts"
+[0m18:41:06.196869 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:41:07.644093 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 1.447 seconds
+[0m18:41:07.645906 [debug] [ThreadPool]: On create_postgres_public_marts: COMMIT
+[0m18:41:07.646361 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_marts"
+[0m18:41:07.646773 [debug] [ThreadPool]: On create_postgres_public_marts: COMMIT
+[0m18:41:07.818547 [debug] [ThreadPool]: SQL status: COMMIT in 0.171 seconds
+[0m18:41:07.819242 [debug] [ThreadPool]: On create_postgres_public_marts: Close
+[0m18:41:07.820534 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_postgres_public_marts, now create_postgres_public_staging)
+[0m18:41:07.821357 [debug] [ThreadPool]: Creating schema "database: "postgres"
+schema: "public_staging"
+"
+[0m18:41:07.823053 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_staging"
+[0m18:41:07.823520 [debug] [ThreadPool]: On create_postgres_public_staging: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "create_postgres_public_staging"} */
+create schema if not exists "public_staging"
+[0m18:41:07.823936 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:41:09.208256 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 1.384 seconds
+[0m18:41:09.210198 [debug] [ThreadPool]: On create_postgres_public_staging: COMMIT
+[0m18:41:09.210698 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_staging"
+[0m18:41:09.211118 [debug] [ThreadPool]: On create_postgres_public_staging: COMMIT
+[0m18:41:09.376948 [debug] [ThreadPool]: SQL status: COMMIT in 0.165 seconds
+[0m18:41:09.377808 [debug] [ThreadPool]: On create_postgres_public_staging: Close
+[0m18:41:09.380315 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marts'
+[0m18:41:09.387842 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marts"
+[0m18:41:09.388333 [debug] [ThreadPool]: On list_postgres_public_marts: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_marts"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_marts'
+  
+[0m18:41:09.388695 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:41:10.763078 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.374 seconds
+[0m18:41:10.764717 [debug] [ThreadPool]: On list_postgres_public_marts: ROLLBACK
+[0m18:41:10.929625 [debug] [ThreadPool]: On list_postgres_public_marts: Close
+[0m18:41:10.931272 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres_public_marts, now list_postgres_public_staging)
+[0m18:41:10.933801 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_staging"
+[0m18:41:10.934410 [debug] [ThreadPool]: On list_postgres_public_staging: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_staging"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_staging'
+  
+[0m18:41:10.934895 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:41:12.291981 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.357 seconds
+[0m18:41:12.294577 [debug] [ThreadPool]: On list_postgres_public_staging: ROLLBACK
+[0m18:41:12.461417 [debug] [ThreadPool]: On list_postgres_public_staging: Close
+[0m18:41:12.466743 [debug] [MainThread]: Using postgres connection "master"
+[0m18:41:12.467378 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:41:12.467857 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:41:13.853593 [debug] [MainThread]: SQL status: SELECT 1 in 1.386 seconds
+[0m18:41:13.855879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BE501250>]}
+[0m18:41:13.856524 [debug] [MainThread]: On master: ROLLBACK
+[0m18:41:14.019639 [debug] [MainThread]: On master: COMMIT
+[0m18:41:14.020942 [debug] [MainThread]: Using postgres connection "master"
+[0m18:41:14.021384 [debug] [MainThread]: On master: COMMIT
+[0m18:41:14.354390 [debug] [MainThread]: SQL status: COMMIT in 0.332 seconds
+[0m18:41:14.355192 [debug] [MainThread]: On master: Close
+[0m18:41:14.384893 [debug] [Thread-1 (]: Began running node model.el_nino.stg_nasa_power
+[0m18:41:14.385820 [info ] [Thread-1 (]: 1 of 3 START sql view model public_staging.stg_nasa_power ...................... [RUN]
+[0m18:41:14.386846 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.el_nino.stg_nasa_power'
+[0m18:41:14.387471 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_nasa_power
+[0m18:41:14.396458 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_nasa_power"
+[0m18:41:14.401148 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_nasa_power
+[0m18:41:14.455609 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_nasa_power"
+[0m18:41:14.461283 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:41:14.461972 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+
+  create view "postgres"."public_staging"."stg_nasa_power__dbt_tmp"
+    
+    
+  as (
+    select
+    city,
+    country,
+    lat,
+    lon,
+    year,
+    month,
+    t2m                                           as temp_c,
+    -- NASA devuelve mm/día, convertimos a mm/mes
+    precip * day(make_date(year::int, month::int, 1) + interval '1 month' - interval '1 day')
+                                                  as precip_mm
+from raw.nasa_power
+where t2m is not null
+  and precip is not null
+  );
+[0m18:41:14.462540 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:41:15.804840 [debug] [Thread-1 (]: Postgres adapter: Postgres error: function day(timestamp without time zone) does not exist
+LINE 16:     precip * day(make_date(year::int, month::int, 1) + inter...
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[0m18:41:15.805550 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: ROLLBACK
+[0m18:41:15.971456 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: Close
+[0m18:41:15.997569 [debug] [Thread-1 (]: Database Error in model stg_nasa_power (models\staging\stg_nasa_power.sql)
+  function day(timestamp without time zone) does not exist
+  LINE 16:     precip * day(make_date(year::int, month::int, 1) + inter...
+                        ^
+  HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  compiled code at target\run\el_nino\models\staging\stg_nasa_power.sql
+[0m18:41:16.000763 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BB8417B0>]}
+[0m18:41:16.001757 [error] [Thread-1 (]: 1 of 3 ERROR creating sql view model public_staging.stg_nasa_power ............. [[31mERROR[0m in 1.61s]
+[0m18:41:16.002756 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_nasa_power
+[0m18:41:16.003349 [debug] [Thread-1 (]: Began running node model.el_nino.stg_oni
+[0m18:41:16.004163 [debug] [Thread-4 (]: Marking all children of 'model.el_nino.stg_nasa_power' to be skipped because of status 'error'.  Reason: Database Error in model stg_nasa_power (models\staging\stg_nasa_power.sql)
+  function day(timestamp without time zone) does not exist
+  LINE 16:     precip * day(make_date(year::int, month::int, 1) + inter...
+                        ^
+  HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  compiled code at target\run\el_nino\models\staging\stg_nasa_power.sql.
+[0m18:41:16.004908 [info ] [Thread-1 (]: 2 of 3 START sql view model public_staging.stg_oni ............................. [RUN]
+[0m18:41:16.006724 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.el_nino.stg_nasa_power, now model.el_nino.stg_oni)
+[0m18:41:16.007312 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_oni
+[0m18:41:16.008664 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_oni"
+[0m18:41:16.010094 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_oni
+[0m18:41:16.013984 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_oni"
+[0m18:41:16.015499 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:41:16.016147 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+
+  create view "postgres"."public_staging"."stg_oni__dbt_tmp"
+    
+    
+  as (
+    select
+    seas,
+    yr   as year,
+    anom as sst_anomaly,
+    enso_phase
+from raw.oni
+  );
+[0m18:41:16.016664 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:17.361023 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.344 seconds
+[0m18:41:17.370114 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:41:17.370777 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+alter table "postgres"."public_staging"."stg_oni__dbt_tmp" rename to "stg_oni"
+[0m18:41:17.536111 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.165 seconds
+[0m18:41:17.560919 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:41:17.561540 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:41:17.562007 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:41:17.730108 [debug] [Thread-1 (]: SQL status: COMMIT in 0.167 seconds
+[0m18:41:17.739108 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_staging"."stg_oni__dbt_backup"
+[0m18:41:17.747312 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:41:17.747930 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+drop view if exists "postgres"."public_staging"."stg_oni__dbt_backup" cascade
+[0m18:41:17.913901 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.165 seconds
+[0m18:41:17.917656 [debug] [Thread-1 (]: On model.el_nino.stg_oni: Close
+[0m18:41:17.918945 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e12f33d7-02d8-47b1-99d6-f33b09a03efa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BE822210>]}
+[0m18:41:17.920137 [info ] [Thread-1 (]: 2 of 3 OK created sql view model public_staging.stg_oni ........................ [[32mCREATE VIEW[0m in 1.91s]
+[0m18:41:17.921344 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_oni
+[0m18:41:17.922466 [debug] [Thread-1 (]: Began running node model.el_nino.mart_climate_by_enso
+[0m18:41:17.923167 [info ] [Thread-1 (]: 3 of 3 SKIP relation public_marts.mart_climate_by_enso ......................... [[33mSKIP[0m]
+[0m18:41:17.924148 [debug] [Thread-1 (]: Finished running node model.el_nino.mart_climate_by_enso
+[0m18:41:17.925939 [debug] [MainThread]: On master: COMMIT
+[0m18:41:17.926530 [debug] [MainThread]: Using postgres connection "master"
+[0m18:41:17.926997 [debug] [MainThread]: On master: COMMIT
+[0m18:41:17.927440 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:41:19.338362 [debug] [MainThread]: SQL status: COMMIT in 1.411 seconds
+[0m18:41:19.339304 [debug] [MainThread]: On master: Close
+[0m18:41:19.340387 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:41:19.340840 [debug] [MainThread]: Connection 'create_postgres_public_staging' was properly closed.
+[0m18:41:19.341257 [debug] [MainThread]: Connection 'list_postgres_public_staging' was properly closed.
+[0m18:41:19.341653 [debug] [MainThread]: Connection 'model.el_nino.stg_oni' was properly closed.
+[0m18:41:19.342162 [info ] [MainThread]: 
+[0m18:41:19.342744 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 16.01 seconds (16.01s).
+[0m18:41:19.344187 [debug] [MainThread]: Command end result
+[0m18:41:19.396399 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:41:19.401691 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:41:19.408439 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:41:19.419252 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\run_results.json
+[0m18:41:19.419811 [info ] [MainThread]: 
+[0m18:41:19.420474 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m18:41:19.421098 [info ] [MainThread]: 
+[0m18:41:19.421731 [error] [MainThread]: [[31mERROR[0m]: in model stg_nasa_power (models\staging\stg_nasa_power.sql)
+[0m18:41:19.422366 [error] [MainThread]:   Database Error in model stg_nasa_power (models\staging\stg_nasa_power.sql)
+  function day(timestamp without time zone) does not exist
+  LINE 16:     precip * day(make_date(year::int, month::int, 1) + inter...
+                        ^
+  HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  compiled code at target\run\el_nino\models\staging\stg_nasa_power.sql
+[0m18:41:19.422885 [info ] [MainThread]: 
+[0m18:41:19.423916 [info ] [MainThread]:   compiled code at target\compiled\el_nino\models\staging\stg_nasa_power.sql
+[0m18:41:19.424847 [info ] [MainThread]: 
+[0m18:41:19.425591 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=1 NO-OP=0 REUSED=0 TOTAL=3
+[0m18:41:19.428132 [debug] [MainThread]: Command `dbt run` failed at 18:41:19.427874 after 20.01 seconds
+[0m18:41:19.428831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BE046BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BB854650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000148BDD1EF90>]}
+[0m18:41:19.429365 [debug] [MainThread]: Flushing usage events
+[0m18:41:20.119136 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:42:42.355951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945A486F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945804CE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945CDF79D0>]}
+
+
+============================== 18:42:42.367225 | 8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3 ==============================
+[0m18:42:42.367225 [info ] [MainThread]: Running with dbt=1.12.5
+[0m18:42:42.368206 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt\\logs'}
+[0m18:42:42.617780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945CDA7CE0>]}
+[0m18:42:42.701260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945B06DF20>]}
+[0m18:42:42.703168 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:42:43.092055 [debug] [MainThread]: checksum: 0bce3ae3049c7c0d7739d914242e358e1b4795d80c6abf319a60ed4cdac07412, vars: {}, profile: el_nino, target: dev, version: 1.12.5
+[0m18:42:43.260066 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:42:43.260996 [debug] [MainThread]: Partial parsing: updated file: el_nino://models\staging\stg_nasa_power.sql
+[0m18:42:43.604565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D380850>]}
+[0m18:42:43.698009 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:42:43.704230 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:42:43.741348 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:42:43.767209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D6EF890>]}
+[0m18:42:43.767891 [info ] [MainThread]: Found 3 models, 477 macros
+[0m18:42:43.768571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D73AA50>]}
+[0m18:42:43.771781 [info ] [MainThread]: 
+[0m18:42:43.772486 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:42:43.772965 [info ] [MainThread]: 
+[0m18:42:43.773743 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:42:43.779397 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:42:43.872051 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:42:43.872536 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:42:43.872874 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:42:45.261410 [debug] [ThreadPool]: SQL status: SELECT 15 in 1.388 seconds
+[0m18:42:45.263201 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:42:45.265742 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:42:45.266412 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:42:45.266868 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:42:46.634550 [debug] [ThreadPool]: SQL status: SELECT 15 in 1.367 seconds
+[0m18:42:46.636690 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:42:46.639155 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marts'
+[0m18:42:46.646841 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marts"
+[0m18:42:46.647330 [debug] [ThreadPool]: On list_postgres_public_marts: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_marts"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_marts'
+  
+[0m18:42:46.647689 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:42:48.033909 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.386 seconds
+[0m18:42:48.035842 [debug] [ThreadPool]: On list_postgres_public_marts: ROLLBACK
+[0m18:42:48.203017 [debug] [ThreadPool]: On list_postgres_public_marts: Close
+[0m18:42:48.204652 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres_public_marts, now list_postgres_public_staging)
+[0m18:42:48.206446 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_staging"
+[0m18:42:48.207030 [debug] [ThreadPool]: On list_postgres_public_staging: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_staging"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_staging'
+  
+[0m18:42:48.207578 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:42:49.649591 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.442 seconds
+[0m18:42:49.651786 [debug] [ThreadPool]: On list_postgres_public_staging: ROLLBACK
+[0m18:42:49.827252 [debug] [ThreadPool]: On list_postgres_public_staging: Close
+[0m18:42:49.834109 [debug] [MainThread]: Using postgres connection "master"
+[0m18:42:49.834886 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:42:49.835560 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:42:51.212279 [debug] [MainThread]: SQL status: SELECT 2 in 1.377 seconds
+[0m18:42:51.213893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D8EB380>]}
+[0m18:42:51.214622 [debug] [MainThread]: On master: ROLLBACK
+[0m18:42:51.378594 [debug] [MainThread]: On master: COMMIT
+[0m18:42:51.379194 [debug] [MainThread]: Using postgres connection "master"
+[0m18:42:51.379646 [debug] [MainThread]: On master: COMMIT
+[0m18:42:51.707253 [debug] [MainThread]: SQL status: COMMIT in 0.327 seconds
+[0m18:42:51.708238 [debug] [MainThread]: On master: Close
+[0m18:42:51.716583 [debug] [Thread-1 (]: Began running node model.el_nino.stg_nasa_power
+[0m18:42:51.717492 [info ] [Thread-1 (]: 1 of 3 START sql view model public_staging.stg_nasa_power ...................... [RUN]
+[0m18:42:51.718534 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.el_nino.stg_nasa_power'
+[0m18:42:51.719164 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_nasa_power
+[0m18:42:51.727454 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_nasa_power"
+[0m18:42:51.728881 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_nasa_power
+[0m18:42:51.783400 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_nasa_power"
+[0m18:42:51.784985 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:42:51.785692 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+
+  create view "postgres"."public_staging"."stg_nasa_power__dbt_tmp"
+    
+    
+  as (
+    select
+    city,
+    country,
+    lat,
+    lon,
+    year,
+    month,
+    t2m                                           as temp_c,
+    -- NASA devuelve mm/día, convertimos a mm/mes
+        precip * extract(day from (make_date(year::int, month::int, 1) + interval '1 month - 1 day'))
+                                                  as precip_mm
+from raw.nasa_power
+where t2m is not null
+  and precip is not null
+  );
+[0m18:42:51.786238 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:42:53.190721 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.404 seconds
+[0m18:42:53.198975 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:42:53.199579 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+alter table "postgres"."public_staging"."stg_nasa_power__dbt_tmp" rename to "stg_nasa_power"
+[0m18:42:53.372592 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.172 seconds
+[0m18:42:53.397928 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: COMMIT
+[0m18:42:53.398644 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:42:53.399120 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: COMMIT
+[0m18:42:53.576385 [debug] [Thread-1 (]: SQL status: COMMIT in 0.177 seconds
+[0m18:42:53.585499 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_staging"."stg_nasa_power__dbt_backup"
+[0m18:42:53.591117 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:42:53.591737 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+drop view if exists "postgres"."public_staging"."stg_nasa_power__dbt_backup" cascade
+[0m18:42:53.767320 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.175 seconds
+[0m18:42:53.770853 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: Close
+[0m18:42:53.774473 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D6E3B90>]}
+[0m18:42:53.775682 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public_staging.stg_nasa_power ................. [[32mCREATE VIEW[0m in 2.05s]
+[0m18:42:53.777112 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_nasa_power
+[0m18:42:53.777925 [debug] [Thread-1 (]: Began running node model.el_nino.stg_oni
+[0m18:42:53.779030 [info ] [Thread-1 (]: 2 of 3 START sql view model public_staging.stg_oni ............................. [RUN]
+[0m18:42:53.780133 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.el_nino.stg_nasa_power, now model.el_nino.stg_oni)
+[0m18:42:53.780989 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_oni
+[0m18:42:53.782857 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_oni"
+[0m18:42:53.784335 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_oni
+[0m18:42:53.788299 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_oni"
+[0m18:42:53.789814 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:42:53.790485 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+
+  create view "postgres"."public_staging"."stg_oni__dbt_tmp"
+    
+    
+  as (
+    select
+    seas,
+    yr   as year,
+    anom as sst_anomaly,
+    enso_phase
+from raw.oni
+  );
+[0m18:42:53.791079 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:55.159618 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.368 seconds
+[0m18:42:55.163264 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:42:55.163858 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+alter table "postgres"."public_staging"."stg_oni" rename to "stg_oni__dbt_backup"
+[0m18:42:55.331669 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.167 seconds
+[0m18:42:55.335476 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:42:55.336057 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+alter table "postgres"."public_staging"."stg_oni__dbt_tmp" rename to "stg_oni"
+[0m18:42:55.500156 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.163 seconds
+[0m18:42:55.505755 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:42:55.506391 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:42:55.506970 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:42:55.670948 [debug] [Thread-1 (]: SQL status: COMMIT in 0.163 seconds
+[0m18:42:55.674227 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_staging"."stg_oni__dbt_backup"
+[0m18:42:55.675410 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:42:55.675972 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+drop view if exists "postgres"."public_staging"."stg_oni__dbt_backup" cascade
+[0m18:42:55.845485 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.169 seconds
+[0m18:42:55.847704 [debug] [Thread-1 (]: On model.el_nino.stg_oni: Close
+[0m18:42:55.848874 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945DB40520>]}
+[0m18:42:55.849845 [info ] [Thread-1 (]: 2 of 3 OK created sql view model public_staging.stg_oni ........................ [[32mCREATE VIEW[0m in 2.07s]
+[0m18:42:55.850863 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_oni
+[0m18:42:55.851928 [debug] [Thread-1 (]: Began running node model.el_nino.mart_climate_by_enso
+[0m18:42:55.852713 [info ] [Thread-1 (]: 3 of 3 START sql table model public_marts.mart_climate_by_enso ................. [RUN]
+[0m18:42:55.853654 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.el_nino.stg_oni, now model.el_nino.mart_climate_by_enso)
+[0m18:42:55.854278 [debug] [Thread-1 (]: Began compiling node model.el_nino.mart_climate_by_enso
+[0m18:42:55.857621 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.mart_climate_by_enso"
+[0m18:42:55.859550 [debug] [Thread-1 (]: Began executing node model.el_nino.mart_climate_by_enso
+[0m18:42:55.890050 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.mart_climate_by_enso"
+[0m18:42:55.891972 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.mart_climate_by_enso"
+[0m18:42:55.893209 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.mart_climate_by_enso"} */
+
+  
+    
+
+  create  table "postgres"."public_marts"."mart_climate_by_enso__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with weather as (
+    select * from "postgres"."public_staging"."stg_nasa_power"
+),
+
+oni as (
+    select * from "postgres"."public_staging"."stg_oni"
+),
+
+-- ONI viene en trimestres (DJF, JFM...). Mapeamos cada mes a su trimestre.
+month_to_seas as (
+    select * from (values
+        (12, 'DJF'), (1, 'DJF'), (2, 'DJF'),
+        (1,  'JFM'), (2, 'JFM'), (3, 'JFM'),
+        (2,  'FMA'), (3, 'FMA'), (4, 'FMA'),
+        (3,  'MAM'), (4, 'MAM'), (5, 'MAM'),
+        (4,  'AMJ'), (5, 'AMJ'), (6, 'AMJ'),
+        (5,  'MJJ'), (6, 'MJJ'), (7, 'MJJ'),
+        (6,  'JJA'), (7, 'JJA'), (8, 'JJA'),
+        (7,  'JAS'), (8, 'JAS'), (9, 'JAS'),
+        (8,  'ASO'), (9, 'ASO'), (10,'ASO'),
+        (9,  'SON'), (10,'SON'), (11,'SON'),
+        (10, 'OND'), (11,'OND'), (12,'OND'),
+        (11, 'NDJ'), (12,'NDJ'), (1, 'NDJ')
+    ) as t(month, seas)
+),
+
+joined as (
+    select
+        w.city,
+        w.country,
+        w.year,
+        w.month,
+        w.temp_c,
+        w.precip_mm,
+        o.sst_anomaly,
+        o.enso_phase
+    from weather w
+    left join month_to_seas m on w.month = m.month
+    left join oni o
+        on m.seas = o.seas
+        and w.year = o.year
+)
+
+select
+    city,
+    country,
+    year,
+    month,
+    temp_c,
+    precip_mm,
+    sst_anomaly,
+    enso_phase
+from joined
+  );
+  
+[0m18:42:55.894069 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:57.246558 [debug] [Thread-1 (]: Postgres adapter: Postgres error: date field value out of range: 1981-13-01
+
+[0m18:42:57.247912 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: ROLLBACK
+[0m18:42:57.416845 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: Close
+[0m18:42:57.426185 [debug] [Thread-1 (]: Database Error in model mart_climate_by_enso (models\marts\mart_climate_by_enso.sql)
+  date field value out of range: 1981-13-01
+  compiled code at target\run\el_nino\models\marts\mart_climate_by_enso.sql
+[0m18:42:57.426819 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8eca2f50-7f70-4ee2-b3ea-6f4a10e504c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945DAB6850>]}
+[0m18:42:57.427505 [error] [Thread-1 (]: 3 of 3 ERROR creating sql table model public_marts.mart_climate_by_enso ........ [[31mERROR[0m in 1.57s]
+[0m18:42:57.428311 [debug] [Thread-1 (]: Finished running node model.el_nino.mart_climate_by_enso
+[0m18:42:57.429263 [debug] [Thread-4 (]: Marking all children of 'model.el_nino.mart_climate_by_enso' to be skipped because of status 'error'.  Reason: Database Error in model mart_climate_by_enso (models\marts\mart_climate_by_enso.sql)
+  date field value out of range: 1981-13-01
+  compiled code at target\run\el_nino\models\marts\mart_climate_by_enso.sql.
+[0m18:42:57.431738 [debug] [MainThread]: On master: COMMIT
+[0m18:42:57.432160 [debug] [MainThread]: Using postgres connection "master"
+[0m18:42:57.432467 [debug] [MainThread]: On master: COMMIT
+[0m18:42:57.432761 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:42:58.885751 [debug] [MainThread]: SQL status: COMMIT in 1.453 seconds
+[0m18:42:58.886569 [debug] [MainThread]: On master: Close
+[0m18:42:58.887623 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:42:58.888096 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m18:42:58.888480 [debug] [MainThread]: Connection 'list_postgres_public_staging' was properly closed.
+[0m18:42:58.888855 [debug] [MainThread]: Connection 'model.el_nino.mart_climate_by_enso' was properly closed.
+[0m18:42:58.889354 [info ] [MainThread]: 
+[0m18:42:58.889955 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 15.12 seconds (15.12s).
+[0m18:42:58.891771 [debug] [MainThread]: Command end result
+[0m18:42:58.945814 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:42:58.951490 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:42:58.958173 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:42:58.969549 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\run_results.json
+[0m18:42:58.970092 [info ] [MainThread]: 
+[0m18:42:58.970793 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m18:42:58.971381 [info ] [MainThread]: 
+[0m18:42:58.972024 [error] [MainThread]: [[31mERROR[0m]: in model mart_climate_by_enso (models\marts\mart_climate_by_enso.sql)
+[0m18:42:58.972650 [error] [MainThread]:   Database Error in model mart_climate_by_enso (models\marts\mart_climate_by_enso.sql)
+  date field value out of range: 1981-13-01
+  compiled code at target\run\el_nino\models\marts\mart_climate_by_enso.sql
+[0m18:42:58.973157 [info ] [MainThread]: 
+[0m18:42:58.973742 [info ] [MainThread]:   compiled code at target\compiled\el_nino\models\marts\mart_climate_by_enso.sql
+[0m18:42:58.974235 [info ] [MainThread]: 
+[0m18:42:58.974856 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m18:42:58.976791 [debug] [MainThread]: Command `dbt run` failed at 18:42:58.976510 after 16.82 seconds
+[0m18:42:58.977558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945A9F0650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945D75B9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002945CEBEF90>]}
+[0m18:42:58.978211 [debug] [MainThread]: Flushing usage events
+[0m18:42:59.768060 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:45:04.880935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B731DC2F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B72F98CE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7347379D0>]}
+
+
+============================== 18:45:04.892210 | 3f6d0b2b-5254-4728-9541-c1b7282aa4bc ==============================
+[0m18:45:04.892210 [info ] [MainThread]: Running with dbt=1.12.5
+[0m18:45:04.893206 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\Gonza\\Desktop\\repos\\el_nino_impact\\dbt\\logs'}
+[0m18:45:05.158170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B73453FCE0>]}
+[0m18:45:05.282059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7329ADF20>]}
+[0m18:45:05.283844 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:45:05.674498 [debug] [MainThread]: checksum: 0bce3ae3049c7c0d7739d914242e358e1b4795d80c6abf319a60ed4cdac07412, vars: {}, profile: el_nino, target: dev, version: 1.12.5
+[0m18:45:05.854119 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:45:05.854790 [debug] [MainThread]: Partial parsing: updated file: el_nino://models\staging\stg_nasa_power.sql
+[0m18:45:06.214480 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B734CC0850>]}
+[0m18:45:06.313389 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:45:06.318643 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:45:06.355539 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:45:06.380756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B73502F890>]}
+[0m18:45:06.381416 [info ] [MainThread]: Found 3 models, 477 macros
+[0m18:45:06.382152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B73507AA50>]}
+[0m18:45:06.385537 [info ] [MainThread]: 
+[0m18:45:06.386432 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:45:06.387077 [info ] [MainThread]: 
+[0m18:45:06.388212 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:45:06.395888 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:45:06.497136 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:45:06.497649 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:45:06.498032 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:45:08.054469 [debug] [ThreadPool]: SQL status: SELECT 15 in 1.556 seconds
+[0m18:45:08.056548 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:45:08.059021 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:45:08.059672 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:45:08.060423 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:45:09.424407 [debug] [ThreadPool]: SQL status: SELECT 15 in 1.364 seconds
+[0m18:45:09.426485 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:45:09.429280 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marts'
+[0m18:45:09.436916 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marts"
+[0m18:45:09.437408 [debug] [ThreadPool]: On list_postgres_public_marts: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_marts"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marts'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_marts'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_marts'
+  
+[0m18:45:09.437846 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:45:10.806377 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.368 seconds
+[0m18:45:10.808150 [debug] [ThreadPool]: On list_postgres_public_marts: ROLLBACK
+[0m18:45:10.976199 [debug] [ThreadPool]: On list_postgres_public_marts: Close
+[0m18:45:10.977426 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres_public_marts, now list_postgres_public_staging)
+[0m18:45:10.979199 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_staging"
+[0m18:45:10.979744 [debug] [ThreadPool]: On list_postgres_public_staging: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "list_postgres_public_staging"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+    union all
+    select distinct
+     'postgres' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_staging'
+  
+[0m18:45:10.980215 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:45:12.378355 [debug] [ThreadPool]: SQL status: SELECT 2 in 1.398 seconds
+[0m18:45:12.380872 [debug] [ThreadPool]: On list_postgres_public_staging: ROLLBACK
+[0m18:45:12.550794 [debug] [ThreadPool]: On list_postgres_public_staging: Close
+[0m18:45:12.557046 [debug] [MainThread]: Using postgres connection "master"
+[0m18:45:12.557739 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:45:12.558303 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:45:13.934270 [debug] [MainThread]: SQL status: SELECT 3 in 1.376 seconds
+[0m18:45:13.936689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B73522B6C0>]}
+[0m18:45:13.937312 [debug] [MainThread]: On master: ROLLBACK
+[0m18:45:14.108932 [debug] [MainThread]: On master: COMMIT
+[0m18:45:14.109935 [debug] [MainThread]: Using postgres connection "master"
+[0m18:45:14.110372 [debug] [MainThread]: On master: COMMIT
+[0m18:45:14.457114 [debug] [MainThread]: SQL status: COMMIT in 0.346 seconds
+[0m18:45:14.458038 [debug] [MainThread]: On master: Close
+[0m18:45:14.466976 [debug] [Thread-1 (]: Began running node model.el_nino.stg_nasa_power
+[0m18:45:14.468231 [info ] [Thread-1 (]: 1 of 3 START sql view model public_staging.stg_nasa_power ...................... [RUN]
+[0m18:45:14.469342 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.el_nino.stg_nasa_power'
+[0m18:45:14.470007 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_nasa_power
+[0m18:45:14.476866 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_nasa_power"
+[0m18:45:14.478459 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_nasa_power
+[0m18:45:14.527224 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_nasa_power"
+[0m18:45:14.529039 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:45:14.529914 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+
+  create view "postgres"."public_staging"."stg_nasa_power__dbt_tmp"
+    
+    
+  as (
+    select
+    city,
+    country,
+    lat,
+    lon,
+    year,
+    month,
+    t2m                                           as temp_c,
+    -- NASA devuelve mm/día, convertimos a mm/mes
+        precip * extract(day from (make_date(year::int, month::int, 1) + interval '1 month - 1 day'))
+                                                  as precip_mm
+from raw.nasa_power
+where t2m is not null
+  and precip is not null
+  and month between 1 and 12
+  );
+[0m18:45:14.530610 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:45:15.941968 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.411 seconds
+[0m18:45:15.951121 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:45:15.951849 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+alter table "postgres"."public_staging"."stg_nasa_power" rename to "stg_nasa_power__dbt_backup"
+[0m18:45:16.122373 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.170 seconds
+[0m18:45:16.126027 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:45:16.126666 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+alter table "postgres"."public_staging"."stg_nasa_power__dbt_tmp" rename to "stg_nasa_power"
+[0m18:45:16.298531 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.171 seconds
+[0m18:45:16.328786 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: COMMIT
+[0m18:45:16.329409 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:45:16.329888 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: COMMIT
+[0m18:45:16.501688 [debug] [Thread-1 (]: SQL status: COMMIT in 0.171 seconds
+[0m18:45:16.509869 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_staging"."stg_nasa_power__dbt_backup"
+[0m18:45:16.516301 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_nasa_power"
+[0m18:45:16.516995 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_nasa_power"} */
+drop view if exists "postgres"."public_staging"."stg_nasa_power__dbt_backup" cascade
+[0m18:45:16.689800 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.172 seconds
+[0m18:45:16.693368 [debug] [Thread-1 (]: On model.el_nino.stg_nasa_power: Close
+[0m18:45:16.697215 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7350271D0>]}
+[0m18:45:16.698367 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public_staging.stg_nasa_power ................. [[32mCREATE VIEW[0m in 2.23s]
+[0m18:45:16.699671 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_nasa_power
+[0m18:45:16.700385 [debug] [Thread-1 (]: Began running node model.el_nino.stg_oni
+[0m18:45:16.701347 [info ] [Thread-1 (]: 2 of 3 START sql view model public_staging.stg_oni ............................. [RUN]
+[0m18:45:16.702383 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.el_nino.stg_nasa_power, now model.el_nino.stg_oni)
+[0m18:45:16.703044 [debug] [Thread-1 (]: Began compiling node model.el_nino.stg_oni
+[0m18:45:16.704384 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.stg_oni"
+[0m18:45:16.705705 [debug] [Thread-1 (]: Began executing node model.el_nino.stg_oni
+[0m18:45:16.710460 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.stg_oni"
+[0m18:45:16.711982 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:45:16.712663 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+
+  create view "postgres"."public_staging"."stg_oni__dbt_tmp"
+    
+    
+  as (
+    select
+    seas,
+    yr   as year,
+    anom as sst_anomaly,
+    enso_phase
+from raw.oni
+  );
+[0m18:45:16.713269 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:45:18.097944 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.385 seconds
+[0m18:45:18.101173 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:45:18.101850 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+alter table "postgres"."public_staging"."stg_oni" rename to "stg_oni__dbt_backup"
+[0m18:45:18.271823 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.169 seconds
+[0m18:45:18.275189 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:45:18.276833 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+alter table "postgres"."public_staging"."stg_oni__dbt_tmp" rename to "stg_oni"
+[0m18:45:18.443414 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.166 seconds
+[0m18:45:18.446324 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:45:18.446887 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:45:18.447392 [debug] [Thread-1 (]: On model.el_nino.stg_oni: COMMIT
+[0m18:45:18.615848 [debug] [Thread-1 (]: SQL status: COMMIT in 0.168 seconds
+[0m18:45:18.618678 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_staging"."stg_oni__dbt_backup"
+[0m18:45:18.619853 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.stg_oni"
+[0m18:45:18.620470 [debug] [Thread-1 (]: On model.el_nino.stg_oni: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.stg_oni"} */
+drop view if exists "postgres"."public_staging"."stg_oni__dbt_backup" cascade
+[0m18:45:18.788699 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.167 seconds
+[0m18:45:18.791245 [debug] [Thread-1 (]: On model.el_nino.stg_oni: Close
+[0m18:45:18.792408 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7353DAD00>]}
+[0m18:45:18.793383 [info ] [Thread-1 (]: 2 of 3 OK created sql view model public_staging.stg_oni ........................ [[32mCREATE VIEW[0m in 2.09s]
+[0m18:45:18.794588 [debug] [Thread-1 (]: Finished running node model.el_nino.stg_oni
+[0m18:45:18.795698 [debug] [Thread-1 (]: Began running node model.el_nino.mart_climate_by_enso
+[0m18:45:18.796521 [info ] [Thread-1 (]: 3 of 3 START sql table model public_marts.mart_climate_by_enso ................. [RUN]
+[0m18:45:18.797473 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.el_nino.stg_oni, now model.el_nino.mart_climate_by_enso)
+[0m18:45:18.798105 [debug] [Thread-1 (]: Began compiling node model.el_nino.mart_climate_by_enso
+[0m18:45:18.801227 [debug] [Thread-1 (]: Writing injected SQL for node "model.el_nino.mart_climate_by_enso"
+[0m18:45:18.802580 [debug] [Thread-1 (]: Began executing node model.el_nino.mart_climate_by_enso
+[0m18:45:18.835171 [debug] [Thread-1 (]: Writing runtime sql for node "model.el_nino.mart_climate_by_enso"
+[0m18:45:18.836863 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.mart_climate_by_enso"
+[0m18:45:18.837764 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.mart_climate_by_enso"} */
+
+  
+    
+
+  create  table "postgres"."public_marts"."mart_climate_by_enso__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with weather as (
+    select * from "postgres"."public_staging"."stg_nasa_power"
+),
+
+oni as (
+    select * from "postgres"."public_staging"."stg_oni"
+),
+
+-- ONI viene en trimestres (DJF, JFM...). Mapeamos cada mes a su trimestre.
+month_to_seas as (
+    select * from (values
+        (12, 'DJF'), (1, 'DJF'), (2, 'DJF'),
+        (1,  'JFM'), (2, 'JFM'), (3, 'JFM'),
+        (2,  'FMA'), (3, 'FMA'), (4, 'FMA'),
+        (3,  'MAM'), (4, 'MAM'), (5, 'MAM'),
+        (4,  'AMJ'), (5, 'AMJ'), (6, 'AMJ'),
+        (5,  'MJJ'), (6, 'MJJ'), (7, 'MJJ'),
+        (6,  'JJA'), (7, 'JJA'), (8, 'JJA'),
+        (7,  'JAS'), (8, 'JAS'), (9, 'JAS'),
+        (8,  'ASO'), (9, 'ASO'), (10,'ASO'),
+        (9,  'SON'), (10,'SON'), (11,'SON'),
+        (10, 'OND'), (11,'OND'), (12,'OND'),
+        (11, 'NDJ'), (12,'NDJ'), (1, 'NDJ')
+    ) as t(month, seas)
+),
+
+joined as (
+    select
+        w.city,
+        w.country,
+        w.year,
+        w.month,
+        w.temp_c,
+        w.precip_mm,
+        o.sst_anomaly,
+        o.enso_phase
+    from weather w
+    left join month_to_seas m on w.month = m.month
+    left join oni o
+        on m.seas = o.seas
+        and w.year = o.year
+)
+
+select
+    city,
+    country,
+    year,
+    month,
+    temp_c,
+    precip_mm,
+    sst_anomaly,
+    enso_phase
+from joined
+  );
+  
+[0m18:45:18.838473 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:45:20.210700 [debug] [Thread-1 (]: SQL status: SELECT 14256 in 1.372 seconds
+[0m18:45:20.219506 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.mart_climate_by_enso"
+[0m18:45:20.220061 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.mart_climate_by_enso"} */
+alter table "postgres"."public_marts"."mart_climate_by_enso__dbt_tmp" rename to "mart_climate_by_enso"
+[0m18:45:20.385924 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.165 seconds
+[0m18:45:20.388912 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: COMMIT
+[0m18:45:20.389540 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.mart_climate_by_enso"
+[0m18:45:20.390045 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: COMMIT
+[0m18:45:20.556874 [debug] [Thread-1 (]: SQL status: COMMIT in 0.166 seconds
+[0m18:45:20.559735 [debug] [Thread-1 (]: Applying DROP to: "postgres"."public_marts"."mart_climate_by_enso__dbt_backup"
+[0m18:45:20.564257 [debug] [Thread-1 (]: Using postgres connection "model.el_nino.mart_climate_by_enso"
+[0m18:45:20.564904 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "el_nino", "target_name": "dev", "node_id": "model.el_nino.mart_climate_by_enso"} */
+drop table if exists "postgres"."public_marts"."mart_climate_by_enso__dbt_backup" cascade
+[0m18:45:20.740657 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.175 seconds
+[0m18:45:20.742990 [debug] [Thread-1 (]: On model.el_nino.mart_climate_by_enso: Close
+[0m18:45:20.744396 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3f6d0b2b-5254-4728-9541-c1b7282aa4bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7353F5270>]}
+[0m18:45:20.745539 [info ] [Thread-1 (]: 3 of 3 OK created sql table model public_marts.mart_climate_by_enso ............ [[32mSELECT 14256[0m in 1.95s]
+[0m18:45:20.746906 [debug] [Thread-1 (]: Finished running node model.el_nino.mart_climate_by_enso
+[0m18:45:20.748683 [debug] [MainThread]: On master: COMMIT
+[0m18:45:20.749163 [debug] [MainThread]: Using postgres connection "master"
+[0m18:45:20.749502 [debug] [MainThread]: On master: COMMIT
+[0m18:45:20.749818 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:45:22.116515 [debug] [MainThread]: SQL status: COMMIT in 1.366 seconds
+[0m18:45:22.117287 [debug] [MainThread]: On master: Close
+[0m18:45:22.118176 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:45:22.118627 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m18:45:22.119016 [debug] [MainThread]: Connection 'list_postgres_public_staging' was properly closed.
+[0m18:45:22.119385 [debug] [MainThread]: Connection 'model.el_nino.mart_climate_by_enso' was properly closed.
+[0m18:45:22.119883 [info ] [MainThread]: 
+[0m18:45:22.120534 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 15.73 seconds (15.73s).
+[0m18:45:22.122375 [debug] [MainThread]: Command end result
+[0m18:45:22.180226 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\manifest.json
+[0m18:45:22.185514 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\semantic_manifest.json
+[0m18:45:22.191069 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\osi_document.json
+[0m18:45:22.203387 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gonza\Desktop\repos\el_nino_impact\dbt\target\run_results.json
+[0m18:45:22.204026 [info ] [MainThread]: 
+[0m18:45:22.204738 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:45:22.205299 [info ] [MainThread]: 
+[0m18:45:22.205841 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m18:45:22.207503 [debug] [MainThread]: Command `dbt run` succeeded at 18:45:22.207300 after 17.53 seconds
+[0m18:45:22.208058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B732334650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B73509B9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7347FEF90>]}
+[0m18:45:22.208558 [debug] [MainThread]: Flushing usage events
+[0m18:45:22.938139 [debug] [MainThread]: An error was encountered while trying to flush usage events

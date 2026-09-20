@@ -1,0 +1,14 @@
+name: el_nino
+version: '1.0.0'
+profile: el_nino
+
+model-paths: ["models"]
+
+models:
+  el_nino:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
