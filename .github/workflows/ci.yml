@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install ruff
+          pip install ruff dbt-postgres
 
       - name: Lint Python (syntax errors and undefined names only)
         run: ruff check --select E9,F ingesta narrativas
