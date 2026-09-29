@@ -1,64 +1,52 @@
-# 🌊 El Niño Impact — Pipeline de Datos Climáticos
+# 🌊 El Niño Impact — Climate Data Pipeline
 
-Proyecto open-source que analiza el impacto histórico de El Niño y La Niña en ciudades sudamericanas, y genera narrativas en lenguaje simple sobre el **Súper El Niño 2026** usando IA.
+Open-source project that analyzes the historical impact of El Niño and La Niña on South American cities, and uses AI to generate plain-language narratives about the 2026 Super El Niño.
 
----
+## What does this project do?
 
-## ¿Qué hace este proyecto?
+- Downloads historical climate data (1981–2024) from NASA and the ENSO index from NOAA
+- Transforms the data with dbt, linking temperature and precipitation to each climate phase
+- Validates data quality with Soda
+- Generates plain-language narratives per city using an LLM (Groq), contextualized in the Super El Niño event forming in 2026
 
-1. **Descarga** datos climáticos históricos (1981–2024) de la NASA y el índice ENSO de la NOAA
-2. **Transforma** los datos con dbt, vinculando temperatura y precipitación a cada fase climática
-3. **Valida** la calidad del dato con Soda
-4. **Genera** narrativas en lenguaje simple por ciudad usando un LLM (Groq), contextualizadas en el evento de Súper El Niño que se está formando en 2026
+## Context
 
----
-
-## Contexto
-
-La NOAA estima un **81% de probabilidad** de que el Súper El Niño 2026 alcance intensidad histórica entre octubre y diciembre, comparable al evento de 1997–1998. Este proyecto traduce esos datos en algo que cualquier persona pueda entender.
-
----
+NOAA estimates a greater than 90% probability [link](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml) that the 2026 Super El Niño will reach historic intensity between October and December, comparable to the 1997–1998 event. This project hopes to turn that data into something anyone can understand. It's still in baby steps... what about people who never touched a line of code? Many things are coming...
 
 ## Stack
 
-| Capa | Tecnología |
-|------|-----------|
-| Ingesta | Python + requests |
-| Almacenamiento | PostgreSQL (Supabase) |
-| Transformación | dbt Core |
-| Calidad | Soda Core |
-| Narrativas IA | Groq API (openai/gpt-oss-20b) |
+| Layer | Technology |
+|---|---|
+| Ingestion | Python + requests |
+| Storage | PostgreSQL (Supabase) |
+| Transformation | dbt Core |
+| Quality | Soda Core |
+| AI narratives | Groq API (openai/gpt-oss-20b) |
 
----
+## Data sources
 
-## Fuentes de datos
+- **NASA POWER API** — Monthly mean temperature and precipitation by coordinate (1981–2024), free
+- **NOAA ONI Index** — Official El Niño / La Niña / Neutral classification index, free
 
-- **[NASA POWER API](https://power.larc.nasa.gov/)** — Temperatura media y precipitación mensual por coordenada (1981–2024), gratis
-- **[NOAA ONI Index](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt)** — Índice oficial de clasificación El Niño / La Niña / Neutro, gratis
+## Cities analyzed
 
----
-
-## Ciudades analizadas
-
-| Ciudad | País |
-|--------|------|
+| City | Country |
+|---|---|
 | Buenos Aires | Argentina |
 | Rosario | Argentina |
 | Tandil | Argentina |
 | Santiago | Chile |
 | Puerto Montt | Chile |
-| Lima | Perú |
+| Lima | Peru |
 | Bogotá | Colombia |
-| São Paulo | Brasil |
-| Manaus | Brasil |
+| São Paulo | Brazil |
+| Manaus | Brazil |
 
----
-
-## Arquitectura
+## Architecture
 
 ```
 NASA POWER API ──┐
-                 ├──► Python ingesta ──► PostgreSQL (raw)
+                 ├──► Python ingestion ──► PostgreSQL (raw)
 NOAA ONI CSV ────┘                            │
                                               ▼
                                         dbt models
@@ -71,23 +59,21 @@ NOAA ONI CSV ────┘                            │
                                       (11/11 passing)
                                               │
                                               ▼
-                                   Groq API (narrativas)
+                                   Groq API (narratives)
                                               │
                                               ▼
                                    public.city_narratives
 ```
 
----
-
-## Estructura del repo
+## Repo structure
 
 ```
 el_nino_impact/
 ├── ingesta/
-│   ├── cities.py          # Coordenadas de ciudades
-│   ├── fetch_nasa.py      # Descarga datos NASA POWER
-│   ├── fetch_oni.py       # Descarga índice ONI de NOAA
-│   └── load_postgres.py   # Carga CSVs a PostgreSQL
+│   ├── cities.py          # City coordinates
+│   ├── fetch_nasa.py      # Downloads NASA POWER data
+│   ├── fetch_oni.py       # Downloads NOAA ONI index
+│   └── load_postgres.py   # Loads CSVs into PostgreSQL
 ├── dbt/
 │   ├── dbt_project.yml
 │   ├── profiles.yml
@@ -102,41 +88,39 @@ el_nino_impact/
 │   └── checks/
 │       └── mart_climate_by_enso.yml
 ├── narrativas/
-│   └── generate.py        # Genera y persiste narrativas con Groq
+│   └── generate.py        # Generates and persists narratives with Groq
 ├── .env.example
 └── requirements.txt
 ```
 
----
-
 ## Setup
 
-### 1. Clonar y configurar entorno
+### 1. Clone and set up the environment
 
 ```bash
-git clone https://github.com/tu-usuario/el_nino_impact.git
+git clone https://github.com/gonsalomon/el_nino_impact.git
 cd el_nino_impact
 pip install -r requirements.txt
 ```
 
-### 2. Configurar variables de entorno
+### 2. Configure environment variables
 
 ```bash
 cp .env.example .env
 ```
 
-Completar `.env`:
+Fill in `.env`:
 
 ```
-DB_HOST=tu-host.supabase.com
+DB_HOST=your-host.supabase.com
 DB_PORT=6543
 DB_NAME=postgres
-DB_USER=postgres.tu-proyecto
-DB_PASSWORD=tu-password
+DB_USER=postgres.your-project
+DB_PASSWORD=your-password
 GROQ_API_KEY=gsk_...
 ```
 
-### 3. Ingestar datos
+### 3. Ingest data
 
 ```bash
 cd ingesta
@@ -145,18 +129,18 @@ python fetch_nasa.py
 python load_postgres.py
 ```
 
-### 4. Correr transformaciones dbt
+### 4. Run dbt transformations
 
 ```bash
 cd ../dbt
 dbt run
 ```
 
-### 5. Validar calidad con Soda
+### 5. Validate quality with Soda
 
-```bash
+```powershell
 cd ../soda
-# Cargar variables de entorno primero (PowerShell):
+# Load environment variables first (PowerShell):
 Get-Content ..\.env | ForEach-Object {
     if ($_ -match '^\s*([^#][^=]+)=(.+)$') {
         [System.Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim(), 'Process')
@@ -165,33 +149,27 @@ Get-Content ..\.env | ForEach-Object {
 soda scan -d el_nino -c configuration.yml checks/mart_climate_by_enso.yml
 ```
 
-### 6. Generar narrativas
+### 6. Generate narratives
 
 ```bash
 cd ../narrativas
 python generate.py
 ```
 
----
+## Technical notes
 
-## Notas técnicas
-
-- NASA POWER devuelve un registro con `month=13` (promedio anual) — filtrado en staging con `WHERE month BETWEEN 1 AND 12`
-- La precipitación de NASA viene en **mm/día** (promedio mensual) — convertida a mm/mes multiplicando por días del mes
-- El índice ONI es trimestral; cada mes se mapea a su trimestre correspondiente para el join con datos de temperatura
-- El modelo `openai/gpt-oss-20b` de Groq es de razonamiento — requiere `max_tokens >= 2048` para producir output en español
-
----
+- NASA POWER returns a record with `month=13` (annual average) — filtered out in staging with `WHERE month BETWEEN 1 AND 12`
+- NASA precipitation comes in mm/day (monthly average) — converted to mm/month by multiplying by the days in the month
+- The ONI index is quarterly; each month is mapped to its corresponding quarter to join with the temperature data
+- Groq's `openai/gpt-oss-20b` is a reasoning model — it requires `max_tokens >= 2048` to produce output in Spanish, which is what this repo was originally aimed at
 
 ## Roadmap
 
-- [ ] Visualización interactiva: mapa de Sudamérica con narrativas por ciudad
-- [ ] Agregar más ciudades
-- [ ] Comparativa histórica: 1997–1998 vs 2015–2016 vs 2026
-- [ ] Dashboard público con actualización automática
+- [ ] Interactive visualization: map of South America with per-city narratives
+- [ ] Add more cities
+- [ ] Historical comparison: 1997–1998 vs 2015–2016 vs 2026
+- [ ] Public dashboard with automatic updates
 
----
-
-## Licencia
+## License
 
 MIT
